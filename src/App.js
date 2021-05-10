@@ -1,5 +1,11 @@
 import logo from './logo.svg';
 import './App.css';
+import Amplify from 'aws-amplify';
+import Predictions, { AmazonAIPredictionsProvider } from '@aws-amplify/predictions';
+import awsconfig from './aws-exports';
+
+Amplify.configure(awsconfig);
+Amplify.addPluggable(new AmazonAIPredictionsProvider());
 
 function App() {
   return (
